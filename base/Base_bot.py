@@ -1,10 +1,18 @@
 from aiogram import Bot, Dispatcher
-from aiogram.dispatcher import router
 import asyncio
+from aiogram.types import Message
 
 
 bot = Bot(token='6757514713:AAFbwHmv4BZMHHtqkf9WBA2YsDNEUbsHHgc')
 dp = Dispatcher()
+
+@dp.message()
+async def cmd_start(message: Message):
+    await message.answer('Старт')
+    await message.reply('Отвечаю')
+
+
+
 
 async def main():
     await dp.start_polling(bot)
