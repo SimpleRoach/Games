@@ -1,6 +1,7 @@
-from aiogram import  Router
+from aiogram import  F, Router, Bot
 from aiogram.types import Message
 from aiogram.filters import CommandStart, Command
+
 import app.keyboards as kb
 
 
@@ -14,3 +15,10 @@ async def cmd_start(message: Message):
 @router.message(Command('help'))
 async def cmd_help(message: Message):
     await message.answer('Нажато help')
+
+
+@router.message(F.text == 'Крестики - Нолики')
+async def tic_tac(message: Message):
+    photo = './app/ttic.jpeg'
+    text = 'Выбрана игра "Крестики - Нолики"'
+    await message.answer(text, reply_markup=kb.tictak)
