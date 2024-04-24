@@ -1,12 +1,10 @@
-from aiohttp import Router
+from aiogram import  Router
 from aiogram.types import Message
 from aiogram.filters import CommandStart, Command
 import keyboards as kb
 
 
 router = Router()
-
-
 @router.message(CommandStart())
 async def cmd_start(message: Message):
     await message.answer('Старт', reply_markup=kb.main)
