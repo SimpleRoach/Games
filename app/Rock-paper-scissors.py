@@ -1,20 +1,6 @@
-class players_RPS:
+import random
+from random import randint
 
-    def __init__(self, name = 'Bot'):
-        self.name = name
-
-
-class Count_RPS:
-
-    def __init__(self, name, bool, count = 0):
-        self.name = name
-        self.count = count
-        self.bool = bool
-
-    def count_RPS(self):
-        if self.bool == True:
-            self.count +=1
-        return self.count
 
 class Game_RPS:
 
@@ -34,3 +20,10 @@ class Game_RPS:
         else:
             return 'Поражение'
 
+def main(p_step = 'Камень', b_step = 'Камень'):
+    game = Game_RPS(p_step, b_step)
+    return game.play()
+
+
+
+# print(random.randint(1, 3))
