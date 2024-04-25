@@ -1,7 +1,7 @@
 from aiogram import Bot, Dispatcher
 import asyncio
 from app.handlers import router
-import logging
+# import logging
 
 from config import TOKEN
 
@@ -16,7 +16,7 @@ async def main():
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
+    # logging.basicConfig(level=logging.INFO)
     try:
         asyncio.run(main())
     except KeyboardInterrupt:

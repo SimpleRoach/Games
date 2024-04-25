@@ -2,6 +2,8 @@ from aiogram.types import (ReplyKeyboardMarkup,
                            KeyboardButton,
                            InlineKeyboardMarkup,
                            InlineKeyboardButton)
+from aiogram.utils.keyboard import (ReplyKeyboardBuilder,
+                                    InlineKeyboardBuilder)
 
 
 main = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text='Крестики - Нолики')],
@@ -17,3 +19,4 @@ tictak = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text='Ст�
 rock_ = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text='Старт', callback_data='rockGame')],
                                                [InlineKeyboardButton(text='Статистика', callback_data='rockStat')],
                                                [InlineKeyboardButton(text='Меню', callback_data='exitMain')]])
+
