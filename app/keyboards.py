@@ -13,3 +13,7 @@ main = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text='Крестики - Н
 tictak = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text='Старт', callback_data='ticGame')],
                                                [InlineKeyboardButton(text='Статистика', callback_data='ticStat')],
                                                [InlineKeyboardButton(text='Меню', callback_data='exitMain')]])
+
+rock_ = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text='Старт', callback_data='rockGame')],
+                                               [InlineKeyboardButton(text='Статистика', callback_data='rockStat')],
+                                               [InlineKeyboardButton(text='Меню', callback_data='exitMain')]])

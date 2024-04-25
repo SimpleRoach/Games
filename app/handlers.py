@@ -22,3 +22,9 @@ async def tic_tac(message: Message):
     photo = './app/ttic.jpeg'
     text = 'Выбрана игра "Крестики - Нолики"'
     await message.answer(text, reply_markup=kb.tictak)
+
+
+@router.message(F.text == 'Камень - Ножницы - Бумага')
+async def Rock_paper_scissors(message: Message):
+    text = 'Выбрана игра "Камень - Ножницы - Бумага"'
+    await message.answer(text, reply_markup=kb.rock_)
