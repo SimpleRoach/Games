@@ -1,9 +1,10 @@
 from aiogram import  F, Router, Bot
 from aiogram.types import Message, CallbackQuery
 from aiogram.filters import CommandStart, Command
+from aiogram.fsm.context import FSMContext
 
 import app.keyboards as kb
-
+import app.stages
 
 router = Router()
 @router.message(CommandStart())
@@ -26,6 +27,7 @@ async def tic_tac(message: Message):
 
 @router.callback_query(F.data == 'ticGame')
 async def ticGame(callback: CallbackQuery):
+    await callback.answer('Вы нажали Старт')
     await callback.message.answer('Играем в Крестики - Нолики')
 
 
@@ -39,4 +41,5 @@ async def Rock_paper_scissors(message: Message):
 
 @router.callback_query(F.data == 'rockGame')
 async def rockGame(callback: CallbackQuery):
+    await callback.answer('Вы нажали Старт')
     await callback.message.answer('Играем в Камень - Ножницы - Бумага')
