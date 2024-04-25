@@ -25,8 +25,8 @@ async def tic_tac(message: Message):
 
 
 @router.callback_query(F.data == 'ticGame')
-async def tic_tac_Game(callback: CallbackQuery):
-    await callback.massage.answer('Играем в Крестики - Нолики')
+async def ticGame(callback: CallbackQuery):
+    await callback.message.answer('Играем в Крестики - Нолики')
 
 
 
@@ -38,5 +38,5 @@ async def Rock_paper_scissors(message: Message):
 
 
 @router.callback_query(F.data == 'rockGame')
-async def Rock_paper_scissors_Game(callback: CallbackQuery):
-    await callback.massage.answer('Играем в Камень - Ножницы - Бумага')
+async def rockGame(callback: CallbackQuery):
+    await callback.message.answer('Играем в Камень - Ножницы - Бумага')
