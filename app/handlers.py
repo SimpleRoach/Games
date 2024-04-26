@@ -4,7 +4,7 @@ from aiogram.filters import CommandStart, Command
 from aiogram.fsm.context import FSMContext
 
 import app.keyboards as kb
-import app.Rock_paper_scissors
+from app.Rock_paper_scissors import rps
 import app.stages
 
 
@@ -37,6 +37,18 @@ async def ticGame(callback: CallbackQuery):
 async def rockGame(callback: CallbackQuery):
     await callback.answer('Вы нажали Старт')
     await callback.message.answer('Играем в Камень - Ножницы - Бумага', reply_markup=kb.rock_Game)
+
+
+@router.message(F.text == 'Камень')
+async def rockPlay(message: Message):
+    await message.answer(str(rps('Камень')))
+@router.message(F.text == 'Ножницы')
+async def rockPlay(message: Message):
+    await message.answer(str(rps('Ножницы')))
+@router.message(F.text == 'Бумага')
+async def rockPlay(message: Message):
+    await message.answer(str(rps('Бумага')))
+
 
 @router.message(F.text == 'Камень - Ножницы - Бумага')
 async def Rock_paper_scissors(message: Message):

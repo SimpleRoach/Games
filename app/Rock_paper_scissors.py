@@ -37,9 +37,9 @@ class Game_RPS:
 
 def rps(p_step = 'Камень'):
     bot = Bot_RPS()
-    game = Game_RPS(p_step, bot.bot_choose())
-    return game.play()
+    bc = bot.bot_choose()
+    game = Game_RPS(p_step, bc)
+    return bc, game.play()
 
-print(rps('Камень'))
 
 # print(random.randint(1, 3))
