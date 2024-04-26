@@ -41,13 +41,13 @@ async def rockGame(callback: CallbackQuery):
 
 @router.message(F.text == 'Камень')
 async def rockPlay(message: Message):
-    await message.answer(str(rps('Камень')))
+    await message.answer(rps('Камень'))
 @router.message(F.text == 'Ножницы')
 async def rockPlay(message: Message):
-    await message.answer(str(rps('Ножницы')))
+    await message.answer(rps('Ножницы'))
 @router.message(F.text == 'Бумага')
 async def rockPlay(message: Message):
-    await message.answer(str(rps('Бумага')))
+    await message.answer(rps('Бумага'))
 
 
 @router.message(F.text == 'Камень - Ножницы - Бумага')
@@ -56,3 +56,6 @@ async def Rock_paper_scissors(message: Message):
     await message.answer(text, reply_markup=kb.rock_)
 
 
+@router.message(F.text == 'Стоп Игра')
+async def rockPlay(message: Message):
+    await message.answer('Окей', reply_markup=kb.main)

@@ -39,7 +39,8 @@ def rps(p_step = 'Камень'):
     bot = Bot_RPS()
     bc = bot.bot_choose()
     game = Game_RPS(p_step, bc)
-    return bc, game.play()
+    result_str = '🤖: ' +  bc + '\nИтог: ' + game.play()
+    return result_str
 
 
 # print(random.randint(1, 3))
