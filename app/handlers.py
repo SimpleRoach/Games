@@ -4,7 +4,9 @@ from aiogram.filters import CommandStart, Command
 from aiogram.fsm.context import FSMContext
 
 import app.keyboards as kb
+import app.Rock_paper_scissors
 import app.stages
+
 
 router = Router()
 @router.message(CommandStart())

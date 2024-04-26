@@ -1,6 +1,21 @@
 import random
 from random import randint
 
+class Bot_RPS:
+    def __init__(self, mov = 0):
+        self.mov = mov
+        self.step = 0
+
+    def bot_choose(self):
+        if self.mov >= 0:
+            self.mov += 1
+            self.step = random.randint(1, 3)
+            if self.step == 1:
+                return "Камень"
+            if self.step == 2:
+                return "Ножницы"
+            if self.step == 3:
+                return "Бумага"
 
 class Game_RPS:
 
@@ -20,10 +35,11 @@ class Game_RPS:
         else:
             return 'Поражение'
 
-def main(p_step = 'Камень', b_step = 'Камень'):
-    game = Game_RPS(p_step, b_step)
+def rps(p_step = 'Камень'):
+    bot = Bot_RPS()
+    game = Game_RPS(p_step, bot.bot_choose())
     return game.play()
 
-
+print(rps('Камень'))
 
 # print(random.randint(1, 3))
