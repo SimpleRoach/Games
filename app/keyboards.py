@@ -2,6 +2,7 @@ from aiogram.types import (ReplyKeyboardMarkup,
                            KeyboardButton,
                            InlineKeyboardMarkup,
                            InlineKeyboardButton)
+
 from aiogram.utils.keyboard import (ReplyKeyboardBuilder,
                                     InlineKeyboardBuilder)
 
@@ -12,11 +13,15 @@ main = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text='Крестики - Н
                                        KeyboardButton(text='Стоп')]],
                            resize_keyboard=True,input_field_placeholder='Выбери команду')
 
-tictak = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text='Старт', callback_data='ticGame')],
-                                               [InlineKeyboardButton(text='Статистика', callback_data='ticStat')],
-                                               [InlineKeyboardButton(text='Меню', callback_data='exitMain')]])
+tictak = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text='Старт', callback_data='ticGame')]])
 
-rock_ = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text='Старт', callback_data='rockGame')],
-                                               [InlineKeyboardButton(text='Статистика', callback_data='rockStat')],
-                                               [InlineKeyboardButton(text='Меню', callback_data='exitMain')]])
+rock_ = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text='Старт', callback_data='rockGame')]])
 
+rock_Game = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text='Камень'),
+                                          KeyboardButton(text='Ножницы'),
+                                          KeyboardButton(text='Бумага')],
+                                          [KeyboardButton(text='Стоп Игра')]],
+                                resize_keyboard=True,input_field_placeholder='Выбери команду')
+
+tictak_Game1 = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text='Стоп Игра')]],
+                                   resize_keyboard=True,input_field_placeholder='Выбери команду')
