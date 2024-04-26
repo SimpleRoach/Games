@@ -9,6 +9,8 @@ import app.stages
 
 
 router = Router()
+
+
 @router.message(CommandStart())
 async def cmd_start(message: Message):
     await message.answer('Старт', reply_markup=kb.main)
